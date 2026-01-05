@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile V14</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- 1. BACKGROUND VIDEO -->
+    <video autoplay muted loop playsinline id="bg-video">
+        <source src="Demon CLS63 AMG - LIMMA.mp4" type="video/mp4">
+    </video>
+
+    <!-- 2. OVERLAY -->
+    <div class="overlay"></div>
+
+    <!-- 3. SOUND BUTTON (Fixed Bottom Right) -->
+    <button id="mute-btn" class="mute-btn">
+        <i class="fa-solid fa-volume-xmark"></i>
+    </button>
+
+    <!-- 4. MAIN CONTENT -->
+    <main class="content-area">
+        
+        <section id="home" class="home-section">
+            <div class="profile-wrapper small-profile">
+                
+                <!-- Avatar -->
+                <div class="avatar-container small-avatar">
+                    <div class="glow-circle"></div>
+                    <img src="https://picsum.photos/seed/gamer/200/200" alt="Avatar" class="avatar">
+                </div>
+
+                <!-- Name -->
+                <h1 class="title small-title">YOUR NAME</h1>
+                <p class="subtitle small-subtitle">Streamer & Creator</p>
+
+                <!-- Buttons -->
+                <div class="links-container">
+                    
+                    <a href="#" class="circle-btn kick" target="_blank">
+                        <i class="fa-solid fa-k"></i>
+                    </a>
+
+                    <a href="#" class="circle-btn twitch" target="_blank">
+                        <i class="fa-brands fa-twitch"></i>
+                    </a>
+
+                    <a href="#" class="circle-btn discord" target="_blank">
+                        <i class="fa-brands fa-discord"></i>
+                    </a>
+
+                    <a href="#" class="circle-btn youtube" target="_blank">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+
+                    <a href="#" class="circle-btn instagram" target="_blank">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

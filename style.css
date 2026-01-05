@@ -1,0 +1,168 @@
+/* --- VARIABLES --- */
+:root {
+    --c-white: #ffffff;
+    --c-accent: #53fc18; 
+    --c-kick: #53fc18;
+    --c-twitch: #9146ff;
+    --c-discord: #5865f2;
+    --c-youtube: #ff0000;
+    --c-insta: #e1306c;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: #050505;
+    color: var(--c-white);
+    overflow-x: hidden;
+}
+
+/* --- VIDEO BACKGROUND --- */
+#bg-video {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    z-index: -2; /* Behind everything */
+    filter: brightness(0.7) contrast(1.1);
+}
+
+/* --- OVERLAY --- */
+.overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: radial-gradient(circle, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.8) 100%);
+    z-index: -1;
+    pointer-events: none; /* FIX: Allows clicks to pass through */
+}
+
+/* --- SOUND BUTTON (Bottom Right) --- */
+.mute-btn {
+    position: fixed;
+    bottom: 30px; right: 30px;
+    width: 45px; height: 45px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.6);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: white;
+    cursor: pointer;
+    z-index: 100; /* FIX: Highest priority */
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+}
+
+.mute-btn:hover {
+    background: white;
+    color: black;
+}
+
+/* --- MAIN CONTENT --- */
+.content-area {
+    position: relative;
+    z-index: 10; /* Above video */
+    min-height: 100vh;
+    width: 100%;
+}
+
+.home-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.profile-wrapper {
+    text-align: center;
+    width: 100%;
+}
+
+/* --- SMALL SIZING --- */
+.small-profile {
+    max-width: 350px;
+    transform: scale(0.9);
+}
+
+.small-avatar {
+    width: 100px; height: 100px;
+    margin: 0 auto 20px;
+}
+
+.small-title {
+    font-size: 2.2rem;
+    margin-bottom: 5px;
+}
+
+.small-subtitle {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-bottom: 25px;
+}
+
+/* --- AVATAR --- */
+.avatar {
+    width: 100%; height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255,255,255,0.2);
+    position: relative;
+    z-index: 2;
+}
+
+.glow-circle {
+    position: absolute;
+    top: -8px; left: -8px;
+    width: calc(100% + 16px); height: calc(100% + 16px);
+    border-radius: 50%;
+    border: 2px solid var(--c-accent);
+    animation: spin 8s linear infinite;
+    z-index: 1;
+}
+
+/* --- CIRCULAR BUTTONS --- */
+.links-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.circle-btn {
+    width: 50px; height: 50px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 100; /* FIX: Ensures buttons are clickable */
+}
+
+.circle-btn:hover {
+    transform: translateY(-5px) scale(1.1);
+    background: white;
+    color: black;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+
+/* Brand Colors */
+.circle-btn.kick:hover { background: var(--c-kick); color: black; border-color: var(--c-kick); }
+.circle-btn.twitch:hover { background: var(--c-twitch); color: white; border-color: var(--c-twitch); }
+.circle-btn.discord:hover { background: var(--c-discord); color: white; border-color: var(--c-discord); }
+.circle-btn.youtube:hover { background: var(--c-youtube); color: white; border-color: var(--c-youtube); }
+.circle-btn.instagram:hover { background: var(--c-insta); color: white; border-color: var(--c-insta); }
+
+/* --- ANIMATION --- */
+@keyframes spin { 100% { transform: rotate(360deg); } }
